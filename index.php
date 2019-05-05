@@ -2,6 +2,9 @@
 
 <script>
 
+	/*
+
+	*/
 /* function getCookie(cname) {
 
   var name = cname + "=";
