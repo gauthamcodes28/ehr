@@ -1265,6 +1265,7 @@ if(devmode)
 });//ENd of UpdateSave
  
 		//Add Type  Row WHen selected the select box for the type name
+var code =1;
 $(".add-row").click(function(){
 			if(devmode)
 			{
@@ -1274,7 +1275,7 @@ $(".add-row").click(function(){
 		var i=0;
 		var flag=1;
             var name = $("#sel1").val();
-			//alert(name);
+		
 			
 			$("#medicine_part h2").each(function(){
 				if(name == $(this).text())
@@ -1282,17 +1283,12 @@ $(".add-row").click(function(){
 				//console.log(this);
 			});
 			
-			/* for(var j=0;j<val.length;j++)
-			{
-				if(val[j]==name)
-				{
-					flag=0;
-					break;
-				}
-			} */
+			
 			
 			if(flag==1)
 			{
+				
+			}
 				//console.log(name);
 				$.ajax({
 					url:'../08common/dataprocess.php',
@@ -1304,7 +1300,7 @@ $(".add-row").click(function(){
 						//console.log(data);
 						var temp="";
 						temp+='<a class="delete-row" style="color:red;text-decoration: underline;">Delete Type</a>';
-				temp+='<h2 class="type_name">'+name+'</h2>';
+				temp+='<h2 class="type_name" code="'+code+'">'+name+'</h2>';
 temp+='<div>';
 	temp+='<div class="tablewrapper" style="max-width: 100%;max-height: 100%;">';
 		temp+='<a  class="plus_sign" style="color:red;text-decoration: underline;" >+Add More</a>';
@@ -1353,10 +1349,7 @@ temp+='</div>';
 					
 					}
 				});
-			}
-			else{
-				alert("Medicine already Exists");
-			}
+		
 	if(devmode)
 			{
 				console.log("ENd add-row js function");
